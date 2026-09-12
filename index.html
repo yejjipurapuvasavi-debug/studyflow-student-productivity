@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyFlow | Student Productivity Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">Study<span>Flow</span></div>
+
+        <div class="header-right">
+            <span id="date"></span>
+            <button id="themeBtn">🌙</button>
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- Welcome -->
+        <section class="welcome">
+            <div>
+                <p class="small-text">STUDENT PRODUCTIVITY</p>
+                <h1>Good morning, <span>Vasavi 👋</span></h1>
+                <p>Plan your day. Focus on your goals. Track your progress.</p>
+            </div>
+
+            <div class="progress-circle">
+                <div>
+                    <strong id="progress">0%</strong>
+                    <small>Completed</small>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="icon">📚</div>
+                <div>
+                    <p>Total Tasks</p>
+                    <h2 id="totalTasks">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="icon">✅</div>
+                <div>
+                    <p>Completed</p>
+                    <h2 id="completedTasks">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="icon">⏱️</div>
+                <div>
+                    <p>Study Goal</p>
+                    <h2><span id="studyHours">0</span> hrs</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Main Grid -->
+        <section class="dashboard-grid">
+
+            <!-- Tasks -->
+            <div class="card tasks-card">
+
+                <div class="card-header">
+                    <div>
+                        <h2>Today's Tasks</h2>
+                        <p>Stay consistent with your goals.</p>
+                    </div>
+
+                    <button class="primary-btn" id="addTaskBtn">
+                        + Add Task
+                    </button>
+                </div>
+
+                <div id="taskList"></div>
+
+            </div>
+
+
+            <!-- Pomodoro -->
+            <div class="card pomodoro-card">
+
+                <h2>Focus Timer</h2>
+                <p>Use focused sessions to study effectively.</p>
+
+                <div class="timer" id="timer">
+                    25:00
+                </div>
+
+                <div class="timer-buttons">
+                    <button id="startBtn">Start</button>
+                    <button id="resetBtn">Reset</button>
+                </div>
+
+            </div>
+
+
+            <!-- Notes -->
+            <div class="card notes-card">
+
+                <div class="card-header">
+                    <div>
+                        <h2>Quick Notes</h2>
+                        <p>Write down important ideas.</p>
+                    </div>
+                </div>
+
+                <textarea
+                    id="notes"
+                    placeholder="Write your notes here..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- Study Goal -->
+            <div class="card goal-card">
+
+                <h2>Today's Study Goal</h2>
+                <p>How many hours do you want to study today?</p>
+
+                <div class="goal-input">
+                    <input
+                        type="number"
+                        id="goalInput"
+                        min="0"
+                        max="24"
+                        placeholder="Example: 4"
+                    >
+
+                    <button id="saveGoal">Save</button>
+                </div>
+
+                <div class="goal-progress">
+                    <div id="goalBar"></div>
+                </div>
+
+                <p class="goal-text">
+                    Goal: <strong id="goalText">0 hours</strong>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Add Task Modal -->
+    <div class="modal" id="taskModal">
+
+        <div class="modal-content">
+
+            <button class="close-btn" id="closeModal">×</button>
+
+            <h2>Add New Task</h2>
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter task name"
+            >
+
+            <select id="subjectInput">
+                <option value="General">General</option>
+                <option value="Python">Python</option>
+                <option value="DBMS">DBMS</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Digital Logic">Digital Logic</option>
+                <option value="English">English</option>
+            </select>
+
+            <button id="saveTask" class="primary-btn">
+                Add Task
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <p>StudyFlow © 2026 | Built with HTML, CSS & JavaScript</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
